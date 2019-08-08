@@ -15,7 +15,7 @@ jobs:
       # - run: yarn
       # - run: npx framer-cli build
       - run: echo hi
-      - run: git diff origin/master --name-status
+      - run: git diff master --name-status
 
   publish:
     docker:
