@@ -1,0 +1,34 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "Unfinished/blanket.framerfx/package.json",
+        "Unfinished/dropdown-menu.framerfx/package.json",
+        "Unfinished/flag.framerfx/package.json",
+        "Unfinished/section-message.framerfx/package.json",
+        "Unfinished/spinner.framerfx/package.json",
+        "Unfinished/tabs.framerfx/package.json",
+        "Unfinished/tooltip.framerfx/package.json",
+        "addison.framerfx/package.json",
+        "atlassian-avatar.framerfx/package.json",
+        "atlassian-badge.framerfx/package.json",
+        "atlassian-banner.framerfx/package.json",
+        "atlassian-breadcrumbs.framerfx/package.json",
+        "atlassian-button.framerfx/package.json",
+        "atlassian-checkbox.framerfx/package.json",
+        "atlassian-color.framerfx/package.json",
+        "atlassian-datetime_picker.framerfx/package.json",
+        "atlassian-icons.framerfx/package.json",
+        "atlassian-lozenge.framerfx/package.json",
+        "atlassian-modal_dialog.framerfx/package.json",
+        "atlassian-radio.framerfx/package.json",
+        "atlassian-range.framerfx/package.json",
+        "atlassian-select.framerfx/package.json",
+        "atlassian-textarea.framerfx/package.json",
+        "atlassian-textfield.framerfx/package.json",
+        "atlassian-toggle.framerfx/package.json",
+        "package.json"
+      ]
+    }
+  }
+}

@@ -13,7 +13,7 @@
   },
   "author": "Addison Schultz",
   "dependencies": {
-    "@atlaskit/icon": "^18.0.2",
+    "@atlaskit/icon": "^19.0.1",
     "@atlaskit/icon-object": "^4.0.4",
     "@atlaskit/logo": "^12.1.4",
     "styled-components": "^4.3.1"
