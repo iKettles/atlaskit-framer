@@ -23,7 +23,7 @@ build
 dist
 node_modules
 .npmrc
-*.framerxproj
+*.framerxproj 
 
 # Project Specific
 importer.sh

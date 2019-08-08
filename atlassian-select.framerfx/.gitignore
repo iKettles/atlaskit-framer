@@ -13,4 +13,4 @@ build
 dist
 node_modules
 .npmrc
-*.framerxproj
+*.framerxproj 
