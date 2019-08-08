@@ -28,6 +28,3 @@ node_modules
 # Project Specific
 importer.sh
 yarn.sh
-
-# Remove Greenkeeper for testing
-greenkeeper.json
