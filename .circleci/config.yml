@@ -14,8 +14,10 @@ jobs:
       - checkout
       # - run: yarn
       # - run: npx framer-cli build
-      - run: echo hi
-      - run: git diff master --name-status
+      # - run: git diff master --name-status
+      - run: # test what branch we're on.
+          name: "What branch am I on?"
+          command: echo ${CIRCLE_BRANCH}
 
   publish:
     docker:
