@@ -29,3 +29,5 @@ node_modules
 importer.sh
 yarn.sh
 
+# Remove Greenkeeper for testing
+greenkeeper.json
