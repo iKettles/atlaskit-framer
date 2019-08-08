@@ -17,9 +17,9 @@ do
   # Cache new yarn.lock
   newYarnLock=$(cat $dir/yarn.lock)
 
-  packageWasUpdated=$(node `dirname $0`/yarn-lock-diff.js @addisonkit $previousYarnLock $newYarnLock)
+  namespacedDependenciesChanged=$(node `dirname $0`/yarn-lock-diff.js @addisonkit $previousYarnLock $newYarnLock)
 
-  if [ "$packageWasUpdated" == "true" ]; then
+  if [ "$namespacedDependenciesChanged" == "true" ]; then
     # package was updated
   fi
 done
