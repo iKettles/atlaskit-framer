@@ -8,5 +8,6 @@
     "import:components": "bash importer.sh"
   },
   "author": "Addison Schultz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }

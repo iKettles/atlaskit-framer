@@ -13,6 +13,6 @@
   },
   "author": "Addison Schultz",
   "dependencies": {
-    "addison-dependency-updater": "^1.0.0"
+    "addison-dependency-updater": "latest"
   }
 }

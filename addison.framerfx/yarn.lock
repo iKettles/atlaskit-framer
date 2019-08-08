@@ -15,10 +15,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-addison-dependency-updater@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/addison-dependency-updater/-/addison-dependency-updater-1.0.0.tgz#b0f81fee719f228f3ba5f770d30bd419fb540613"
-  integrity sha512-dMktsijNZR55UHaAjUqAWNfP8JmLmVuQYM5w3NMBwv4+c/HEKpaNH13pGcboF+6B6pOeNIMI8asnTKQyj1z+zw==
+addison-dependency-updater@latest:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/addison-dependency-updater/-/addison-dependency-updater-1.1.0.tgz#df83349ec5ea6b1ee3d97b6e021fa47351948f85"
+  integrity sha512-kcCUaKti7PslfR+fDfwafoiRfgIc/Dt5r7XxVbQ+spIFV1z8T2wm1MR1Pknj28/F247j8z5njqDgvYn9JPxP3g==
 
 csstype@^2.2.0:
   version "2.6.1"
