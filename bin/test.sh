@@ -23,6 +23,12 @@ do
 
   if [ "$namespacedDependenciesChanged" == "true" ]; then
     echo "$framerProject had dependency updates"
+    # Build project
+    npx framer-cli build 
+    
+    # Publish project to team store
+    # @TODO uncomment
+    # npx framer-cli publish --yes
   else
     echo "$framerProject had no dependency updates"
   fi 
