@@ -8,7 +8,7 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function BreadcrumbsStateless(props) {
+function BreadcrumbsStateless(props) {
   return <System.BreadcrumbsStateless {...props} style={style} />;
 }
 

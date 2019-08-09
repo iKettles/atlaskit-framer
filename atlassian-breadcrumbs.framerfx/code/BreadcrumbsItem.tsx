@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as System from "@atlaskit/breadcrumbs";
-import { ControlType, PropertyControls, addPropertyControls } from "framer";
+import { ControlType, addPropertyControls } from "framer";
 import { controls, merge } from "./inferredProps/BreadcrumbsItem";
 
 const style: React.CSSProperties = {
@@ -8,21 +8,34 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function BreadcrumbsItem(props) {
-  return <System.BreadcrumbsItem {...props} style={style} />;
+export function Breadcrumbs(props) {
+  return (
+    <System.BreadcrumbsStateless style={style}>
+      {props.items.map(item => {
+        return React.createElement(System.BreadcrumbsItem, {
+          text: item,
+          truncationWidth: props.truncationWidth
+        });
+      })}
+    </System.BreadcrumbsStateless>
+  );
 }
 
-BreadcrumbsItem.defaultProps = {
+Breadcrumbs.defaultProps = {
   width: 150,
-  height: 50
+  height: 20
 };
 
-addPropertyControls(BreadcrumbsItem, {
-  href: merge(controls.href, {}),
-  target: merge(controls.target, {}),
-  iconAfter: merge(controls.iconAfter, {}),
-  iconBefore: merge(controls.iconBefore, {}),
-  text: merge(controls.text, {}),
-  truncationWidth: merge(controls.truncationWidth, {}),
-  hasSeparator: merge(controls.hasSeparator, {})
+addPropertyControls(Breadcrumbs, {
+  truncationWidth: merge(controls.truncationWidth, {
+    defaultValue: 50,
+    min: 1,
+    max: 75
+  }),
+  items: {
+    type: ControlType.Array,
+    title: "Breadcrumbs",
+    propertyControl: { type: ControlType.String },
+    defaultValue: ["Page 1", "Page 2"]
+  }
 });

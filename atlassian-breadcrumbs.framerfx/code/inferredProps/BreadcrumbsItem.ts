@@ -25,8 +25,14 @@ export const controls: Controls = {
   iconAfter: { title: "IconAfter", type: ControlType.String },
   iconBefore: { title: "IconBefore", type: ControlType.String },
   text: { title: "Text", type: ControlType.String },
-  truncationWidth: { title: "TruncationWidth", type: ControlType.Number },
-  hasSeparator: { title: "HasSeparator", type: ControlType.Boolean }
+  truncationWidth: {
+    title: "TruncationWidth",
+    type: ControlType.Number
+  },
+  hasSeparator: {
+    title: "HasSeparator",
+    type: ControlType.Boolean
+  }
 };
 
 export function merge(
