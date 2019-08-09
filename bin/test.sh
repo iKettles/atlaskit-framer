@@ -3,16 +3,11 @@
 # Preserve newlines
 IFS=
 
-sourceDir=`dirname $0`
-declare -a arr=("addison.framerfx" "atlassian-avatar.framerfx" "atlassian-badge.framerfx" "atlassian-banner.framerfx" "atlassian-breadcrumbs.framerfx" "atlassian-button.framerfx" "atlassian-checkbox.framerfx" "atlassian-color.framerfx" "atlassian-datetime_picker.framerfx" "atlassian-icons.framerfx" "atlassian-lozenge.framerfx" "atlassian-modal_dialog.framerfx" "atlassian-radio.framerfx" "atlassian-range.framerfx" "atlassian-select.framerfx" "atlassian-textarea.framerfx" "atlassian-textfield.framerfx" "atlassian-toggle.framerfx" )
-
-for dir in "${arr[@]}"
+# Iterate over Framer projects
+for framerProject in *.framerfx;
 do
-  cd $dir
-
-  workingDir=$(pwd)
-
-  echo $workingDir
+  # Switch to project directory
+  cd $framerProject
 
   # Cache previous yarn.lock
   previousYarnLock=$(cat ./yarn.lock)
@@ -23,12 +18,15 @@ do
   # Cache new yarn.lock
   newYarnLock=$(cat ./yarn.lock)
 
+  # Check if any namespaced dependencies changes
   namespacedDependenciesChanged=$(node ../bin/yarn-lock-diff.js @atlaskit $previousYarnLock $newYarnLock)
 
   if [ "$namespacedDependenciesChanged" == "true" ]; then
-    # package was updated
-    echo "$dir changed"
-  fi
+    echo "$framerProject had dependency updates"
+  else
+    echo "$framerProject had no dependency updates"
+  fi 
 
+  # Switch back to root directory
   cd ..
 done
