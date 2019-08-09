@@ -8,7 +8,7 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function ModalFooter(props) {
+function ModalFooter(props) {
   return <System.ModalFooter {...props} style={style} />;
 }
 

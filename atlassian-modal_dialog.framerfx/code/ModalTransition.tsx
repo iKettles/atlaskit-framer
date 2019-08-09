@@ -8,7 +8,7 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function ModalTransition(props) {
+function ModalTransition(props) {
   return <System.ModalTransition {...props} style={style} />;
 }
 

@@ -8,7 +8,7 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function ModalTitle(props) {
+function ModalTitle(props) {
   return <System.ModalTitle {...props} style={style} />;
 }
 

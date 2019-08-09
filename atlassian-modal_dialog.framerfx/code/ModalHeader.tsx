@@ -8,7 +8,7 @@ const style: React.CSSProperties = {
   height: "100%"
 };
 
-export function ModalHeader(props) {
+function ModalHeader(props) {
   return <System.ModalHeader {...props} style={style} />;
 }
 
