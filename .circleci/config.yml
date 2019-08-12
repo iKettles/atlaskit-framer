@@ -22,6 +22,6 @@ workflows:
   hourly-project-update:
     triggers:
       - schedule:
-        cron: "0 * * * *"
+          cron: "0 * * * *"
     jobs:
       - build-and-publish
