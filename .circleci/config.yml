@@ -16,9 +16,9 @@ jobs:
 
 workflows:
   version: 2
-  test-and-publish:
+  update-dependant-projects:
     jobs:
-      - build
+      - build-and-publish
   hourly-project-update:
     triggers:
       - schedule:
