@@ -15,7 +15,7 @@ do
   previousYarnLock=$(cat ./yarn.lock)
 
   # Update dependencies
-  yarn > /dev/null
+  yarn > /dev/null 2>&1
 
   # Cache new yarn.lock
   newYarnLock=$(cat ./yarn.lock)
