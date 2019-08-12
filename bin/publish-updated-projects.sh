@@ -3,6 +3,8 @@
 # Preserve newlines
 IFS=
 
+namespace="@atlaskit"
+
 # Iterate over Framer projects
 for framerProject in *.framerfx;
 do
@@ -19,10 +21,10 @@ do
   newYarnLock=$(cat ./yarn.lock)
 
   # Check if any namespaced dependencies changes
-  namespacedDependenciesChanged=$(node ../bin/yarn-lock-diff.js @atlaskit $previousYarnLock $newYarnLock)
+  namespacedDependenciesChanged=$(node ../bin/yarn-lock-diff.js $namespace $previousYarnLock $newYarnLock)
 
   if [ "$namespacedDependenciesChanged" == "true" ]; then
-    echo "$framerProject had dependency updates"
+    echo "$framerProject had $namespace dependency updates, publishing new version of project"
     # Build project
     npx framer-cli build 
     
@@ -30,7 +32,7 @@ do
     # @TODO uncomment
     # npx framer-cli publish --yes
   else
-    echo "$framerProject had no dependency updates"
+    echo "$framerProject had no $namespae dependency updates"
   fi 
 
   # Switch back to root directory
