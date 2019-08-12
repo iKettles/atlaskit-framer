@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Treat unset variables as errors
+set -u
+
 # Preserve newlines
 IFS=
 
