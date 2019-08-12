@@ -32,7 +32,7 @@ do
     # @TODO uncomment
     # npx framer-cli publish --yes
   else
-    echo "$framerProject had no $namespae dependency updates"
+    echo "$framerProject had no $namespace dependency updates"
   fi 
 
   # Switch back to root directory
