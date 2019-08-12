@@ -30,11 +30,7 @@ workflows:
   test-and-publish:
     jobs:
       - build
-      # - publish:
-      #     requires:
-      #       - build
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-      #           - /greenkeeper\/.*/
+  hourly-project-update:
+    triggers:
+      - schedule:
+        cron: 0 * * * *
