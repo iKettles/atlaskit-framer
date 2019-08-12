@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  build-and-publish:
     docker:
       - image: circleci/node:10
 
@@ -12,29 +12,20 @@ jobs:
 
     steps:
       - checkout
-      - run: ./bin/test.sh
-
-  publish:
-    docker:
-      - image: circleci/node:10
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-      - run: yarn
-      - run: npx framer-cli publish --yes
+      - run: ./bin/publish-updated-projects.sh
 
 workflows:
   version: 2
-  test-and-publish:
+  update-dependant-projects:
     jobs:
-      - build
-      # - publish:
-      #     requires:
-      #       - build
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-      #           - /greenkeeper\/.*/
+      - build-and-publish
+  hourly-project-update:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build-and-publish
