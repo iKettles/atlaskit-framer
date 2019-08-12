@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - checkout
-      - run: ./bin/test.sh
+      - run: ./bin/publish-updated-projects.sh
 
   publish:
     docker:
