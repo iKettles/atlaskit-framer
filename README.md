@@ -10,9 +10,10 @@ Within the `.circleci` directory is a sample configuration which can be included
 
 #### Environment Variables
 You should set the following environment variables within your CircleCI project:
-|Name|Value|Description|
-|-|-|-|
-|`PACKAGE_NAMESPACE`|`@atlaskit`|Namespace of packages to target|
+
+| Name | Value | Description |
+| - | - | - |
+| `PACKAGE_NAMESPACE` | `@atlaskit` | Namespace of packages to target |
 
 ### Implementation
 You should include `./bin/publish-updated-projects.sh` and `./bin/yarn-lock-diff.js` within your repository. If you get the error `./bin/publish-updated-projects.sh: No such file or directory` ensure the shell script has execution permissions.
