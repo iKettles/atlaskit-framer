@@ -13,7 +13,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "61:27:7e:e6:8a:10:e4:06:1e:cf:58:08:df:4e:51:af"
+            - "${CI_GIT_USER_KEY_FINGERPRINT}"
       - checkout
       - run: ./bin/publish-updated-projects.sh
 
