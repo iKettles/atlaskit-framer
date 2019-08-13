@@ -6,6 +6,10 @@ set -u
 # Preserve newlines
 IFS=
 
+# Update git config in case we need to commit as part of this build
+git config user.email "$CI_GIT_USER_EMAIL"
+git config user.name "$CI_GIT_USER_NAME"
+
 # Iterate over Framer projects
 for framerProject in *.framerfx;
 do
