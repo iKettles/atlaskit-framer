@@ -10,6 +10,9 @@ IFS=
 git config user.email "$CI_GIT_USER_EMAIL"
 git config user.name "$CI_GIT_USER_NAME"
 
+# Boolean flag to indicate if a project was (re)published
+projectWasPublished=false
+
 # Iterate over Framer projects
 for framerProject in *.framerfx;
 do
@@ -30,6 +33,10 @@ do
 
   if [ "$namespacedDependenciesChanged" == "true" ]; then
     echo "$framerProject had $PACKAGE_NAMESPACES dependency updates, publishing new version of project"
+
+    # Update boolean flag
+    projectWasPublished=true
+
     # Build project
     npx framer-cli build 
     
@@ -43,3 +50,10 @@ do
   # Switch back to root directory
   cd ..
 done
+
+# If a project was updated we need to update the repository to reflect the new yarn.lock files
+if [ "$projectWasPublished" = true ]; then
+  git add .
+  git commit -m 'Republished Framer project [skip ci'
+  git push origin HEAD
+fi
