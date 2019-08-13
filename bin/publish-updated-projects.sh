@@ -22,10 +22,10 @@ do
   newYarnLock=$(cat ./yarn.lock)
 
   # Check if any namespaced dependencies changes
-  namespacedDependenciesChanged=$(node ../bin/yarn-lock-diff.js $PACKAGE_NAMESPACE $previousYarnLock $newYarnLock)
+  namespacedDependenciesChanged=$(node ../bin/yarn-lock-diff.js $PACKAGE_NAMESPACES $previousYarnLock $newYarnLock)
 
   if [ "$namespacedDependenciesChanged" == "true" ]; then
-    echo "$framerProject had $PACKAGE_NAMESPACE dependency updates, publishing new version of project"
+    echo "$framerProject had $PACKAGE_NAMESPACES dependency updates, publishing new version of project"
     # Build project
     npx framer-cli build 
     
@@ -33,7 +33,7 @@ do
     # @TODO uncomment
     # npx framer-cli publish --yes
   else
-    echo "$framerProject had no $PACKAGE_NAMESPACE dependency updates"
+    echo "$framerProject had no $PACKAGE_NAMESPACES dependency updates"
   fi 
 
   # Switch back to root directory
