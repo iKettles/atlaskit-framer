@@ -31,7 +31,7 @@ do
     
     # Publish project to team store
     # @TODO uncomment
-    # env FRAMER_TOKEN=<token> npx framer-cli publish --yes
+    # npx framer-cli publish --yes
   else
     echo "$framerProject had no $PACKAGE_NAMESPACE dependency updates"
   fi 
