@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PACKAGE_NAMESPACE="@atlaskit"
+PACKAGE_NAMESPACES="@atlaskit"
 
 ./bin/publish-updated-projects.sh
