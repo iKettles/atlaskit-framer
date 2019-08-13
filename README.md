@@ -33,5 +33,6 @@ As the CI will need to make commits back to your repository, you'll need to gene
 You should include `./bin/publish-updated-projects.sh` and `./bin/yarn-lock-diff.js` within your repository. If you get the error `./bin/publish-updated-projects.sh: No such file or directory` ensure the shell script has execution permissions.
 
 ### Steps
-- Every time the `build-and-publish` job is run the dependencies of each `.framerfx` project within the repository will be checked. - If any package which has a name that matches one of the configured namespaces has been updated, the Framer project will be published (this also works for packages that use `latest` as the version in `package.json`).
+- Every time the `build-and-publish` job is run the dependencies of each `.framerfx` project within the repository will be checked. 
+- If any package which has a name that matches one of the configured namespaces has been updated, the Framer project will be published (this also works for packages that use `latest` as the version in `package.json`).
 - If any Framer project is published, the CI will then make a commit back to the master branch that reflects the updated yarn.lock files.
