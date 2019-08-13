@@ -19,7 +19,7 @@ jobs:
 
 workflows:
   version: 2
-  update-dependant-projects:
+  master-commit:
     jobs:
       - build-and-publish
   hourly-project-update:
