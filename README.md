@@ -36,3 +36,7 @@ You should include `./bin/publish-updated-projects.sh` and `./bin/yarn-lock-diff
 - Every time the `build-and-publish` job is run the dependencies of each `.framerfx` project within the repository will be checked. 
 - If any package which has a name that matches one of the configured namespaces has been updated, the Framer project will be published (this also works for packages that use `latest` as the version in `package.json`).
 - If any Framer project is published, the CI will then make a commit back to the master branch that reflects the updated yarn.lock files.
+
+### Todo
+- More descriptive commit messages when projects have been published
+- Log updated package versions (`@atlaskit/avatar 1.0.0 - 1.0.1`)
